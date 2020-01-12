@@ -101,5 +101,11 @@
                  {{ end }}
           {{ end }}
     </div>
+    
+    {{ if and .IsPage (ne .Params.comment false) }}
+    <div class="post-comment">
+    {{ partial "comments.html" . }}
+    </div>
+    {{- end }}
 </article>
 {{- end }}
