@@ -1,18 +1,18 @@
 <footer class="footer">
     <p class="copyright">
-        {{ with .Site.Params.since }}
         <span itemprop="copyrightYear">
-            <a href="http://www.beian.miit.gov.cn/" target="_blank" rel="external nofollow">
+            <a href="{{ .Site.BaseURL }}" target="_blank" rel="external nofollow">
+                {{ with .Site.Params.since }}
                 Copyright &copy; {{.}} - {{ now.Year }}
+                {{ end }}
             </a>
         </span>
-        {{ end }}
         <span class="with-love">
-            <i class="iconfont icon-love"></i>
+            <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-love"></i></a>
         </span>
         {{ if .Site.Params.author }}
         <span class="author" itemprop="copyrightHolder">
-            <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author  }}</a>
+            <a href="/about">{{ .Site.Params.author  }}</a>
         </span>
         {{ end }}
     </p>
