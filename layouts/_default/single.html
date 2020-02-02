@@ -93,11 +93,10 @@
         <a href="{{.NextInSection.Permalink}}" class="next" rel="next" title="{{.NextInSection.Title}}">{{.NextInSection.Title}}&nbsp;<i class="iconfont icon-right"></i></a>
         {{ end }}
     </div>
-    
     <div class="post-comment">
-    {{ if and .IsPage (ne .Params.comment false) }}
-        {{ partial "comments.html" . }}
-    {{- end }}
+    {{ if ne .Site.DisqusShortname "" }}
+        {{ template "_internal/disqus.html" . }}
+    {{ end }}
     </div>
 </article>
 {{- end }}

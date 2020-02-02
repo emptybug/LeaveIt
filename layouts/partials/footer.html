@@ -1,21 +1,28 @@
 <footer class="footer">
-    <div class="copyright">
-        &copy;
+    <p class="copyright">
         {{ with .Site.Params.since }}
-        <span itemprop="copyrightYear">{{.}} - {{ now.Year }}</span>
+        <span itemprop="copyrightYear">
+            <a href="http://www.beian.miit.gov.cn/" target="_blank" rel="external nofollow">
+                Copyright &copy; {{.}} - {{ now.Year }}
+            </a>
+        </span>
         {{ end }}
         <span class="with-love">
-    	 <i class="iconfont icon-love"></i> 
-         </span>
-         {{ if .Site.Params.author }}
-            <span class="author" itemprop="copyrightHolder"><a href="{{ .Site.BaseURL }}">{{ .Site.Params.author  }}</a> | </span> 
-         {{ end }}
-
-         {{ with .Site.Params.beian }}
-            <a href="http://www.beian.miit.gov.cn/" target="_blank" rel="external nofollow">{{ . }} </a> |
-         {{ end }}
-        <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
-    </div>
+            <i class="iconfont icon-love"></i>
+        </span>
+        {{ if .Site.Params.author }}
+        <span class="author" itemprop="copyrightHolder">
+            <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author  }}</a>
+        </span>
+        {{ end }}
+    </p>
+    <p>
+        {{ with .Site.Params.beian }}
+        <a href="http://www.beian.miit.gov.cn/" target="_blank" rel="external nofollow">{{ . }} </a> |
+        {{ end }}
+        <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a
+                href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span>
+    </p>
 </footer>
 
 {{ partial "js.html" . }}

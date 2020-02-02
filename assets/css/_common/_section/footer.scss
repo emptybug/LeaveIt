@@ -3,6 +3,11 @@
   .copyright {
     font-size: 14px;
   }
+
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
   
   #dynamic-to-top {
     display: none;
